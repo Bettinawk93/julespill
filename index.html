@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Julespill</title>
+    <title></title>
 </head>
 <body>
     <audio controls autoplay loop>
         <source src="julesang.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+       
       </audio>
 
-    <img id="bannerImage" class="hode" name="pic"/><br>
-    <button class="b1" onClick="changeImage()">Høyre</button>
-    <button class="b11" onClick="changeImage()">Venstre</button>
+    <img id="bannerImage1" src="hode3.png" /><br>
+    <button class="b1" onclick="changeImage1('hode2.png')">Høyre</button>
+    <button class="b11" onclick="changeImage1('hode3.png')">Venstre</button>
 
-    <img id="bannerImage2" src="kropp1.png" /><br>
+    <img id="bannerImage2" src="kropp3.png" /><br>
     <button class="b2" onclick="changeImage2('kropp2.png')">Høyre</button>
-    <button class="b22" onclick="changeImage2('kropp1.png')">Venstre</button>
+    <button class="b22" onclick="changeImage2('kropp3.png')">Venstre</button>
 
-    <img id="bannerImage3" src="bein1.png" /><br>
+    <img id="bannerImage3" src="bein3.png" /><br>
     <button class="b3" onclick="changeImage3('bein2.png')">Høyre</button>
-    <button class="b33" onclick="changeImage3('bein1.png')">Venstre</button>
+    <button class="b33" onclick="changeImage3('bein3.png')">Venstre</button>
 
     
 
@@ -35,7 +35,7 @@ position: absolute;
 
 }
 
-#bannerImage    {
+#bannerImage1    {
     height: 200px;
     width: 500px;
     margin-left: 30%;
@@ -58,7 +58,7 @@ position: absolute;
 
 body    {
     background-image: url('./jul.jpg');
-    display: cover;
+    background-size: cover;
     background-repeat: no-repeat;
     
 
@@ -189,25 +189,13 @@ body    {
 <script>
     
 
+ 
 
-var images = [
-  "hode1.png",
-  "hode2.png",
-  "hode3.png",
-]
+    function changeImage1(filename)  {
+    let img = document.querySelector('#bannerImage1');
+    img.setAttribute("src", filename);
 
-var step = 0;
-changeImage(); 
-
-function changeImage() {
-
-  if (typeof images == "undefined" ||  step == images.length) return;     
-
-  document.getElementById('bannerImage').src = images[step];
-  step++;
-}
-
-   
+    }
     
 
     function changeImage2(filename)  {
